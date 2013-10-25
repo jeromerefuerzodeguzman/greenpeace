@@ -2,8 +2,9 @@
 
 
 @section('content')
-	<div class="small-5 large-centered columns">
-		<h5>{{ $phonenumber }}</h5>
+	<div class="small-5 large-centered columns" style="border: 1px solid whitesmoke; background: whitesmoke;">
+		<br />
+		<img src="img/user.jpg" width="50px">&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">{{ $phonenumber }}</span>
 		<hr />
 		@foreach($lists as $list)
 		<p style="font-size: 14px;" class="triangle-isosceles top" >
