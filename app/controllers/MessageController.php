@@ -10,11 +10,21 @@ class MessageController extends BaseController {
 
 	}
 
-	public function messages($phonenumber) {
-		$list = Message::where('phonenumber', '=', $phonenumber)->get();
+	public function messages($phones) {
+		$_phones = explode('-', $phones);
+		$_from = $_phones['0'];
+		$_to = $_phones['1'];
+
+
+		$list = Message::where('from', $_from)
+			->where('to', $_to)
+			->orWhere(function($query) use ($_from, $_to) {
+				$query->where('from', $_to)
+                      ->where('to',  $_from);
+			})->get();
 
 		return View::make('messages')
-				->with('phonenumber', $phonenumber)
+				->with('phonenumber', $_from)
 				->with('lists', $list);
 	}
 }

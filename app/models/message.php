@@ -4,12 +4,13 @@ class Message extends Eloquent {
 
 	public static function messages() {
 		$results = DB::select('
-			SELECT a.* FROM  (
-				SELECT b.* FROM `gp_messages` b
-				ORDER BY b.`created_at` DESC
-			) a
-			GROUP BY a.`phonenumber` 
-			ORDER BY a.`id` DESC'
+			SELECT 
+			     IF(`from` < `to`, 
+			         CONCAT(`from`, \'-\', `to`),
+			         CONCAT(`to`, \'-\', `from`)
+			     ) as conversation_ids, MAX(`created_at`) as `created_at`, COUNT(*) as `total`
+			FROM `gp_messages`
+			GROUP BY conversation_ids'
 			);
 		
 		return $results;

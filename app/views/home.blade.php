@@ -8,10 +8,10 @@
 			@foreach($lists as $list)
 				<tr>
 					<td style="padding: 0px;">
-						<a href="{{ Request::root() }}/{{ $list->phonenumber }}">
+						<a href="{{ Request::root() }}/{{ $list->conversation_ids }}">
 						<ul id="ul_messages">
-							<li><span style="font-weight: bold">{{ $list->phonenumber }}<span></li>
-							<li><p id="li_latest_message">{{ $list->created_at }}: <br />{{ $list->message }}</p></li>
+							<li><span style="font-weight: bold">{{ $list->conversation_ids }}<span></li>
+							<li><p id="li_latest_message">{{ $list->created_at }}</p></li>
 						</ul>
 						</a>
 					</td>
