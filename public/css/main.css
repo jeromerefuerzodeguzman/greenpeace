@@ -73,10 +73,12 @@
     top: 60px;
 }
 
-a {
+a:link {
 	color: #c55500 ;
 	text-decoration:none !important ;
 }
+
+
 
 #ul_messages {
 	height: 75px;
