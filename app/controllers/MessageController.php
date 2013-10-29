@@ -16,15 +16,22 @@ class MessageController extends BaseController {
 		$_to = $_phones['1'];
 
 
-		$list = Message::where('from', $_from)
+		$lists = Message::where('from', $_from)
 			->where('to', $_to)
 			->orWhere(function($query) use ($_from, $_to) {
 				$query->where('from', $_to)
                       ->where('to',  $_from);
 			})->get();
 
+		//mark all as read
+		foreach($lists as $list) {
+			if($list->new == 1) {
+				$list->mark_as_read();
+			}
+		}
+		
 		return View::make('messages')
 				->with('phonenumber', $_from)
-				->with('lists', $list);
+				->with('lists', $lists);
 	}
 }

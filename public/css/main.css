@@ -81,7 +81,7 @@ a:link {
 
 
 #ul_messages {
-	height: 75px;
+	
 	margin-bottom: 2px;
 	list-style-type: none;
 	background: #CFE0BE;
@@ -95,6 +95,7 @@ a:link {
 	width: 370px; 
 	overflow: hidden; 
 	text-overflow: ellipsis;
+	margin: 0;
 }
 
 

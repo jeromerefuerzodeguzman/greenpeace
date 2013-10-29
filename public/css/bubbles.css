@@ -158,7 +158,7 @@ blockquote p {
 
 .triangle-isosceles.left {
 	margin-left:50px;
-	background:#f3961c;
+	background:#edc38b;
 }
 
 /* Variant : for right positioned triangle
@@ -166,7 +166,7 @@ blockquote p {
 
 .triangle-isosceles.right {
 	margin-right:50px;
-	background:#f3961c;
+	background:#84afd8;
 }
 
 /* THE TRIANGLE
@@ -206,7 +206,7 @@ blockquote p {
 	left:-50px; /* value = - border-left-width - border-right-width */
 	bottom:auto;
 	border-width:10px 50px 10px 0;
-	border-color:transparent #f3961c;
+	border-color:transparent #edc38b;
 }
 
 /* Variant : right
@@ -218,7 +218,7 @@ blockquote p {
 	bottom:auto;
     left:auto;
 	border-width:10px 0 10px 50px;
-	border-color:transparent #f3961c;
+	border-color:transparent #84afd8;
 }
 
 
