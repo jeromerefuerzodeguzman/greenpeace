@@ -13,9 +13,11 @@ class CreateMessageTable extends Migration {
 	{
 		Schema::create('messages', function($table){
 			$table->increments('id');
-			$table->string('phonenumber');
+			$table->string('from');
+			$table->string('to');
 			$table->string('message');
-			$table->timestamps();	
+			$table->boolean('new')->default(1);
+			$table->timestamps();
 		});
 	}
 
