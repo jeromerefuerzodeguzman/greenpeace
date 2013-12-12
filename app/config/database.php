@@ -63,6 +63,17 @@ return array(
 			'prefix'    => 'gp_',
 		),
 
+		'mysql_pbx' => array(
+			'driver'    => 'mysql',
+			'host'      => '191.168.3.212',
+			'database'  => 'asteriskdb',
+			'username'  => 'nsi',
+			'password'  => 'nsiast1',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',

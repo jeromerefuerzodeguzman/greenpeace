@@ -11,4 +11,11 @@
 |
 */
 Route::get('/', 'MessageController@home');
+Route::get('/send', function() {
+	$connection = ssh2_connect('191.168.3.212', 22);
+	ssh2_auth_password($connection, 'ambet', 'pardonme15');
+
+	$stream = ssh2_exec($connection, '/var/lib/asterisk/agi-bin/sendsms.php +639178839985 "Hello vernon this is the asterisk"');
+
+});
 Route::get('/{phonenumber}', 'MessageController@messages');

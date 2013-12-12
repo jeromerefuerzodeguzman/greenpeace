@@ -9,11 +9,11 @@
 				<img src="img/user.jpg" width="50px" />&nbsp;&nbsp;&nbsp;
 				<span style="font-weight: bold;">{{ $phonenumber }}</span>
 				<hr />
-				@foreach($lists as $list)
-				<p style="display: block; font-size: 14px; clear:both" class="triangle-isosceles <?= $list->to==$phonenumber? "right me":"left to"?>" >
-					<span style="font-size: 11px; color: WHITE;">{{ date("M j g:iA",strtotime($list->created_at)) }}</span>
+				@foreach($conversations as $conversation)
+				<p style="display: block; font-size: 14px; clear:both" class="triangle-isosceles <?= $conversation->dest==$phonenumber? "right me":"left to"?>" >
+					<span style="font-size: 11px; color: WHITE;">{{ date("M j g:iA",strtotime($conversation->datetime)) }}</span>
 					<br />
-					<span>{{ $list->message }}</span>
+					<span>{{ $conversation->message }}</span>
 				</p>
 				@endforeach
 			</div>

@@ -13,10 +13,11 @@ class CreateMessageTable extends Migration {
 	{
 		Schema::create('messages', function($table){
 			$table->increments('id');
-			$table->string('from');
-			$table->string('to');
+			$table->string('src');
+			$table->string('dest');
 			$table->string('message');
-			$table->boolean('new')->default(1);
+			$table->string('channel')->nullable();
+			$table->boolean('readflag')->default(0);
 			$table->timestamps();
 		});
 	}

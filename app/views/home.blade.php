@@ -10,8 +10,8 @@
 					<td style="padding: 0px;">
 						<a href="{{ Request::root() }}/{{ $list->conversation_ids }}">
 						<ul id="ul_messages">
-							<li><span style="font-weight: <?= $list->new==1? "900":"0"?>">{{ $list->conversation_ids }}<span></li>
-							<li><p id="li_latest_message">{{ date("M j g:iA",strtotime($list->created_at)) }}</p></li>
+							<li><span style="font-weight: <?= $list->readflag==0? "900":"0"?>">{{ $list->conversation_ids }}<span></li>
+							<li><p id="li_latest_message">{{ date("M j g:iA",strtotime($list->datetime)) }}</p></li>
 						</ul>
 						</a>
 					</td>
