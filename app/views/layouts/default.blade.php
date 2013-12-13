@@ -11,6 +11,7 @@
 	</head>
 	<body>
 		<div id="content" >
+			<div class="fixed">
 			<nav class="top-bar" style="background: #66cc00">
 				<ul class="title-area">
 				    <li class="name">
@@ -19,7 +20,8 @@
     				<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 			  	</ul>
 			</nav>
-			<div class="row">
+			</div>
+			<div class="row" style="margin-top: 45px;">
 				<div class="large-12 columns main-content">
 					@yield('content')
 				</div>

@@ -19,3 +19,10 @@ Route::get('/send', function() {
 
 });
 Route::get('/{phonenumber}', 'MessageController@messages');
+Route::post('send_sms', function() {
+	$dest = Input::get('phonenumber');
+	$mess = Input::get('message');
+	$message = str_replace(' ', '+', $mess);
+	$files = file_get_contents('http://191.168.3.212/pbx/sendsms.php?dest='.$dest.'&message='.$message.'');
+	return Redirect::to('/' . $dest . '-8881'); 
+});

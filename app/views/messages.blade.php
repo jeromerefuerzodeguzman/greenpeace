@@ -16,6 +16,11 @@
 					<span>{{ $conversation->message }}</span>
 				</p>
 				@endforeach
+				{{ Form::open(array('url' => 'send_sms', 'method' => 'post', 'class' => 'custom')) }}
+					{{ Form::textarea('message') }}
+					{{ Form::hidden('phonenumber', $phonenumber) }}
+					{{ Form::submit('SEND', array('class' => 'small button radius')) }}
+				{{ Form::close(); }}
 			</div>
 		</div>
 	</div>
@@ -23,5 +28,7 @@
 
 
 @section('scripts')
-	
+	<script>
+		  $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+	</script>
 @endsection
